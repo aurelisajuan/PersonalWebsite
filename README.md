@@ -1,4 +1,4 @@
-# Portfolio ⋅˚₊‧ ୨୧ ‧₊˚ ⋅
+# Portfolio ˚ʚ♡ɞ˚
 Serves as an online portfolio, showcasing my skills, projects, and experiences in web design and full-stack development.
 
 ## ୨୧ Features
