@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --bg: #08140F;
+    --text: #FAFAD8;
+    --bg2: #17372A;
+    --sec: #47674F;
+    --ter: #ADBC9D;
+}
+
+html, body{
+    height: 100%;
+    background-color: var(--bg);
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.head{
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.name{
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--ter);
+}
+
+.dev{
+    font-size: 30px;
+    font-weight: 400;
+    margin: 5px 0;
+    border: 2px solid var(--sec);
+    padding: 5px 10px;
+    border-radius: 20px;;
+}
+
+.cs{
+    font-size: 30px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.tag{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#lisa{
+    height: auto;
+    width: 40vw;
+    stroke-dasharray: 2567;
+    animation: fillSvg 6s ease-in-out infinite ;
+}
+
+@keyframes fillSvg{
+    0%{
+        stroke-dashoffset: 2567;
+    }
+    50%{
+        stroke-dashoffset: 1283.5;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
