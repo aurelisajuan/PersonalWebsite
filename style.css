@@ -22,14 +22,26 @@ html, body{
 }
 
 .head{
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin-bottom: 5%;
+    margin-top: 35px;
 }
 
 .name{
-    font-size: 50px;
+    font-size: 80px;
     font-weight: 700;
     margin: 0;
+}
+
+.fa-solid{
+    position: fixed;
+    top: 50%;
+    right:5rem;
+    transform: translateY(-50%);
+    margin:0;
+    font-size: 20px;
+    color: var(--text);
+    cursor: pointer;
+    animation: slideLeftRight 2s ease-in-out infinite;
 }
 
 .col{
@@ -47,6 +59,10 @@ html, body{
     border: 2px solid var(--sec);
     padding: 5px 10px;
     border-radius: 20px;;
+}
+
+.dev:hover{
+    border: 2px solid var(--text);
 }
 
 .cs{
@@ -76,5 +92,17 @@ html, body{
     }
     100%{
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes slideLeftRight{
+    0%{
+        transform:translate(0, -50%);
+    }
+    50%{
+        transform:translate(-10px, -50%);
+    }
+    100%{
+        transform:translate(0, -50%);
     }
 }
