@@ -28,7 +28,7 @@ html, body{
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
 }
 
 .head{
@@ -119,27 +119,94 @@ html, body{
 #home-section {
     width: 100%;
     min-height: 100vh;
-    background-color: var(--bg2);
-    padding: 50px 20px;
+    background: linear-gradient(to bottom, #08140F, #17372A);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 0;
+    padding: 50px 20px;
+}
+
+#home-image {
+    width: 50px;
+    height: auto;
+}
+
+.typewriter {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#changing-text {
+    display: inline-block;
+    font-weight: 700;
+    border-right: 2px solid var(--text);
+    padding-right: 5px;
+    color: var(--text);
 }
 
 #home-section h2 {
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text);
     margin: 20px 0;
 }
 
 #home-section p {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 700;
     color: var(--ter);
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    align-self: flex-start;
+    margin: 0 0 0 250px;
+}
+
+#quest-img {
+    width: 70%;
+    margin-top: 30px;
+}
+
+.bottom-border {
+    margin-top: 5rem;
+    width: 100%;
+    /* bottom: 0; */
+    border-top: 4px solid var(--ter);
+    border-bottom: 4px solid var(--ter);
+    padding: 15px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg2);
+}
+
+.scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text);
+    animation: scroll 70s linear infinite;
+    margin: 0;
+    padding: 0;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }

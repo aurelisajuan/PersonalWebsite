@@ -34,10 +34,21 @@
         <i class="fa-solid fa-chevron-down scroll-arrow" onclick="scrollToSection('home-section')"></i>
     
         <section id="home-section">
-            <h2>Welcome to the Home Section</h2>
-            <p>This is the section that appears when you scroll down.</p>
-        </section>
+            <img id="home-image" src="./img/sign.png" alt="Signature">
+            <h2 class="typewriter">
+                &lt;title&gt;<span id="changing-text"></span>&lt;/title&gt;
+            </h2>
+            <p>Current Quest</p>
+            <img id="quest-img" src="./img/quest.png" alt="Quest">
         
+            <div class="bottom-border">
+                <div class="scrolling-text">
+                    <span> &nbsp; ambitious &nbsp; ◆ &nbsp; motivated &nbsp; ◆ &nbsp; optimistic &nbsp; ◆ &nbsp; ambitious &nbsp; ◆ &nbsp; motivated &nbsp; ◆ &nbsp; optimistic &nbsp; ◆ &nbsp;
+                        ambitious &nbsp; ◆ &nbsp; motivated &nbsp; ◆ &nbsp; optimistic &nbsp; ◆ &nbsp; ambitious &nbsp; ◆ &nbsp; motivated &nbsp; ◆ &nbsp; optimistic &nbsp; ◆ &nbsp;
+                    </span>
+                </div>
+            </div>
+        </section>
 
         <script>
             document.querySelector('.scroll-arrow').addEventListener('click', function() {
@@ -45,6 +56,41 @@
                     behavior: 'smooth'
                 });
             });
+
+            const words = ["Aurelisa Sindhunirmala", "林芳好"];
+            let wordIndex = 0;
+            let letterIndex = 0;
+            const speed = 100;
+
+            function typeWriter() {
+                const currentWord = words[wordIndex];
+                if (letterIndex < currentWord.length) {
+                    document.getElementById("changing-text").textContent += currentWord.charAt(letterIndex);
+                    letterIndex++;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    setTimeout(() => {
+                        deleteWord();
+                    }, 4000);
+                }
+            }
+
+            function deleteWord() {
+                const currentWord = words[wordIndex];
+                if (letterIndex > 0) {
+                    document.getElementById("changing-text").textContent = currentWord.substring(0, letterIndex - 1);
+                    letterIndex--;
+                    setTimeout(deleteWord, speed);
+                } else {
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            window.addEventListener("DOMContentLoaded", (event) => {
+                typeWriter();
+            });
+
         </script>
     </body>
 </html>
