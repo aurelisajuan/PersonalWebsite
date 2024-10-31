@@ -29,10 +29,22 @@
                 </linearGradient>
                 </defs>
             </svg> 
-        </div>       
+        </div>   
         
-        <i class="fa-solid fa-chevron-right"></i>
+        <i class="fa-solid fa-chevron-down scroll-arrow" onclick="scrollToSection('home-section')"></i>
+    
+        <section id="home-section">
+            <h2>Welcome to the Home Section</h2>
+            <p>This is the section that appears when you scroll down.</p>
+        </section>
         
 
+        <script>
+            document.querySelector('.scroll-arrow').addEventListener('click', function() {
+                document.getElementById('home-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        </script>
     </body>
 </html>
