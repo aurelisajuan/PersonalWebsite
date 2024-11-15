@@ -28,7 +28,13 @@
     </section>
 
     <section id="home-section" class="section">
-        <a href="about.html"><img id="home-image" src="./img/sign.png" alt="Signature"></a>
+        <div class="image-container">
+            <a href="about.html">
+                <img id="home-image" src="./img/sign.png" alt="Signature">
+                <span class="tooltip">Click to learn more about me!</span>
+            </a>
+        </div>
+
         <h2 class="typewriter">
             &lt;title&gt;<span id="changing-text"></span>&lt;/title&gt;
         </h2>
@@ -107,6 +113,33 @@
         }
 
         window.onload = typeWriter;
+
+        const imageContainer = document.querySelector('.image-container');
+        const tooltip = document.querySelector('.tooltip');
+
+        imageContainer.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                tooltip.style.visibility = 'visible';
+                tooltip.style.opacity = '1';
+            }
+        });
+
+        imageContainer.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                tooltip.style.visibility = 'hidden';
+                tooltip.style.opacity = '0';
+            }
+        });
+
+        imageContainer.addEventListener('focus', function() {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        });
+
+        imageContainer.addEventListener('blur', function() {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        });
     </script>
 </body>
 </html>
