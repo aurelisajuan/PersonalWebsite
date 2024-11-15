@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Aurelisa Sindhunirmala</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-color: #08140F;
+            --text-color: #FAFAD8;
+            --accent-color: #47674F;
+            --secondary-color: #ADBC9D;
+            --box-color: #B8C4B0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            font-weight: normal;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            font-weight: bold;
+            background: linear-gradient(to right, #47674F, #ADBC9D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a.active {
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: normal;
+        }
+
+        .boxes-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            object-fit: cover;
+        }
+
+        .box.large {
+            width: 250px;
+            height: 250px;
+        }
+
+        .box.active {
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+        
+        .name {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .description.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        #home-image {
+            width: 50px;
+            height: 50px;
+        }
+
+        #lucky, #me, #comsci {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/efe66bb6fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img id="home-image" src="./img/sign.png" alt="Signature"></a>
+        <div class="nav-links">
+            <a href="#" class="active">about</a>
+            <a href="./portfolio.html">portfolio</a>
+            <a href="#resume">resume</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="title">&lt;title&gt; More About Me &lt;/title&gt;</h1>
+        
+        <div class="boxes-container">
+            <img class="box" src="./img/lucky.jpeg" alt="Lucky" data-content="lucky">
+            <img class="box large active" src="./img/me.jpg" alt="Me" data-content="me">
+            <img class="box" src="./img/coding.jpg" alt="Computer Science" data-content="comsci">
+        </div>
+
+        <div class="name" id="content-title">Aurelisa Sindhunirmala</div>
+
+        <p class="description show" id="content-description">
+            I am dedicated to creating cutting-edge solutions that bridge hardware and 
+            software for today's world. With a background in leading diverse teams, I 
+            excel in fast-paced settings where accuracy and scalability are essential.
+        </p>
+
+        <div class="social-links">
+            <a href="https://github.com/aurelisajuan" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/aurelisa-sindhunirmala/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:your.email@example.com">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Add click event to logo to return to home page
+        document.querySelector('.logo').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        // Add click events to nav links for active state
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links a.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Box animation and content change
+        const boxes = document.querySelectorAll('.box');
+        const description = document.getElementById('content-description');
+        const title = document.getElementById('content-title');
+        const contents = {
+            lucky: {
+                title: "Animal Lover",
+                description: "I consider myself fortunate to have the opportunity to pursue my passion for technology and innovation. This drive fuels my continuous learning and growth in the field of computer science."
+            },
+            me: {
+                title: "Aurelisa Sindhunirmala",
+                description: "I am dedicated to creating cutting-edge solutions that bridge hardware and software for today's world. With a background in leading diverse teams, I excel in fast-paced settings where accuracy and scalability are essential."
+            },
+            comsci: {
+                title: "Majoring in Computer Science and Engineering",
+                description: "As a computer science enthusiast, I'm constantly exploring new technologies and methodologies. My focus areas include artificial intelligence, data structures, and algorithm optimization."
+            }
+        };
+
+        boxes.forEach(box => {
+            box.addEventListener('click', function() {
+                boxes.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                description.classList.remove('show');
+                setTimeout(() => {
+                    title.textContent = contents[this.dataset.content].title;
+                    description.textContent = contents[this.dataset.content].description;
+                    description.classList.add('show');
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

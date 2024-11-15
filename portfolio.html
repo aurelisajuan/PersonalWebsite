@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Aurelisa Sindhunirmala</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-color: #08140F;
+            --text-color: #FAFAD8;
+            --accent-color: #47674F;
+            --secondary-color: #ADBC9D;
+            --box-color: #B8C4B0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            /* margin: auto; */
+            /* padding: 2rem; */
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            font-weight: normal;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            font-weight: bold;
+            background: linear-gradient(to right, #47674F, #ADBC9D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a.active {
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin: auto 2rem;
+            margin-bottom: 3rem;
+            font-weight: normal;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            margin: auto 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(184, 196, 176, 0.5);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            background-color: rgba(184, 196, 176, 0.6);
+            transform: scale(1.05);
+        }
+
+        .project-image {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 0.25rem;
+            background-color: rgba(71, 103, 79, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: rgba(250, 250, 216, 0.9);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            font-size: 0.875rem;
+            color: rgba(71, 103, 79, 0.2);
+            background-color: rgba(250, 250, 216, 0.9);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            padding: 0.25rem;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        #home-image {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo"><img id="home-image" src="./img/sign.png" alt="Signature"></a>
+            <div class="nav-links">
+                <a href="about.html">about</a>
+                <a href="#" class="active">portfolio</a>
+                <a href="#">resume</a>
+            </div>
+        </nav>
+
+        <h1 class="title">&lt;title&gt; Portfolio &lt;/title&gt;</h1>
+
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid"></div>
+
+    <script>
+        const projects = [
+            {
+                title: "SplatNFT",
+                description: "SplatNFT combines both and turn our moments into interactive pieces of art, redefining how creativity and technology intersect",
+                image: "./img/splat.png",
+                links: {
+                    devpost: "https://devpost.com/software/splatnft?ref_content=user-portfolio&ref_feature=in_progress",
+                    demo: "https://github.com/KevinWu098/SplatNFT"
+                }
+            },
+            {
+                title: "Linguify",
+                description: "Linguify provides practical, real-world practice that builds confidence and fluency, making language learning engaging and effective",
+                image: "./img/linguify.png",
+                links: {
+                    devpost: "https://devpost.com/software/linguify-katunw",
+                    github: "https://github.com/IdkwhatImD0ing/Linguify"
+                }
+            },
+            {
+                title: "WildGuard",
+                description: "WildGuard is an innovative web application designed to combat wildlife poaching on a global scale",
+                image: "./img/wild.png",
+                links: {
+                    devpost: "https://devpost.com/software/wildguard",
+                    demo: "https://github.com/honglebs/WildGuard"
+                }
+            },
+            {
+                title: "Elevate",
+                description: "Elevate is a crowdfunding platform that connects donors with homeless individuals through personalized profiles and storytelling",
+                image: "./img/elevate.png",
+                links: {
+                    devpost: "https://devpost.com/software/elevate-pklvrh",
+                    github: "https://github.com/coderkai03/Elevate"
+                }
+            },
+            {
+                title: "Qiz",
+                description: "Qiz is an AI-powered web app for students to create practice tests from their notes or even from simply searching a topic",
+                image: "./img/qiz.png",
+                links: {
+                    devpost: "https://devpost.com/software/qiz",
+                    demo: "https://github.com/AureliaSindhu/springHack"
+                }
+            },
+            {
+                title: "Naga Guard",
+                description: "Naga Guard aims to help local clinics and hospitals by optimizing the clinical coding process",
+                image: "./img/naga.png",
+                links: {
+                    devpost: "https://devpost.com/software/nagaguard",
+                    github: "https://github.com/EthanSantos/NagaGuard"
+                }
+            }
+        ];
+
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'project-image';
+            const image = document.createElement('img');
+            image.src = project.image;
+            image.alt = project.title;
+            imageContainer.appendChild(image);
+
+            const title = document.createElement('h2');
+            title.className = 'project-title';
+            title.textContent = project.title;
+
+            const description = document.createElement('p');
+            description.className = 'project-description';
+            description.textContent = project.description;
+
+            const links = document.createElement('div');
+            links.className = 'project-links';
+
+            for (const [key, url] of Object.entries(project.links)) {
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+                links.appendChild(link);
+            }
+
+            card.appendChild(imageContainer);
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(links);
+
+            return card;
+        }
+
+        function renderPortfolio() {
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            projects.forEach(project => {
+                const card = createProjectCard(project);
+                portfolioGrid.appendChild(card);
+            });
+        }
+
+        renderPortfolio();
+    </script>
+</body>
+</html>
